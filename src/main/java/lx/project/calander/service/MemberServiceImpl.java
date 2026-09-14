@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import lx.project.calander.dao.MemberDAO;
-import lx.project.calander.to.MemberTO;
+import lx.project.calendar.to.MemberTO;
 
 @Service
 public class MemberServiceImpl implements MemberService {

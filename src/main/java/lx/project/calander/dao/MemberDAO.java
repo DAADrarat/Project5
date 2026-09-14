@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import lx.project.calander.controller.MainController;
-import lx.project.calander.to.MemberTO;
+import lx.project.calendar.to.MemberTO;
 
 
 @Component

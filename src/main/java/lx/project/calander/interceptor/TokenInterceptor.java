@@ -1,6 +1,5 @@
 package lx.project.calander.interceptor;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,7 +11,6 @@ import jakarta.servlet.http.HttpSession;
 public class TokenInterceptor implements HandlerInterceptor{
 	
 	@Override
-	//preHandle()은 Controller가 실행되기 전에 호출
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		HttpSession session = request.getSession();
