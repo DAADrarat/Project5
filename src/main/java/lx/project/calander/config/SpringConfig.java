@@ -7,11 +7,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@MapperScan(basePackages = "lx.project.calander")
 public class SpringConfig {
 // DB,데이터 계층을 담은자바 코드
 	
@@ -19,7 +21,7 @@ public class SpringConfig {
 	public DataSource dataSource() {
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://localhost:3306/newhr");
+		ds.setUrl("jdbc:mysql://localhost:3306/project3");
 		ds.setUsername("root");
 		ds.setPassword("rootroot");
 		return ds;

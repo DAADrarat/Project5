@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper-ab">
-	<insert id="insert" parameterType="lx.edu.myabweb.to.AddrBookTO">
+<mapper namespace="mapper-cal">
+	<insert id="insert" parameterType="lx.project.calander.to.MemberTO">
 	
 		insert into addrbook(ab_name, ab_email, ab_comdept, ab_birth, ab_tel, ab_memo)
 		values(#{abName}, #{abEmail}, #{abComdept}, #{abBirth}, #{abTel}, #{abMemo})
 	</insert>
 	
 	
-	<update id="update" parameterType="lx.edu.myabweb.to.AddrBookTO">
+	<update id="update" parameterType="lx.project.calander.to.MemberTO">
 				update addrbook 
 				<trim prefix="SET" suffixOverrides=",">
 					<if test="abName != null">ab_name = #{abName}, </if>
@@ -21,7 +21,7 @@
 				where ab_id = #{abId}
 	</update>
 	
-	<select id="getlist" resultType="lx.edu.myabweb.to.AddrBookTO">
+	<select id="getlist" resultType="lx.project.calander.to.MemberTO">
 		select ab_id
 			,ab_name
 			,ab_email
@@ -32,7 +32,7 @@
 		from addrbook
 	</select>
 	
-	<select id="getById" parameterType="int" resultType="lx.edu.myabweb.to.AddrBookTO">
+	<select id="getById" parameterType="int" resultType="lx.project.calander.to.MemberTO">
 		select ab_id
 			,ab_name
 			,ab_email
@@ -45,7 +45,7 @@
 	</select>
 	
 	
-	<delete id="delete" parameterType="lx.edu.myabweb.to.AddrBookTO">
+	<delete id="delete" parameterType="lx.project.calander.to.MemberTO">
 		delete from addrbook
 		where ab_id = #{abId}
 	</delete>

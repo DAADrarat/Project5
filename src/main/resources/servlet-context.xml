@@ -29,14 +29,14 @@
   <interceptors>
   	<interceptor>
   		<mapping path="/list.do"></mapping>
-  		<beans:bean class="lx.edu.myabweb.interceptor.LoginInterceptor"></beans:bean>
+  		<beans:bean class="lx.project.calander.interceptor.LoginInterceptor"></beans:bean>
   	</interceptor>
   	<interceptor>
   		<mapping path="/insert.do"></mapping>
-  		<beans:bean class="lx.edu.myabweb.interceptor.TokenInterceptor"></beans:bean>
+  		<beans:bean class="lx.project.calander.interceptor.TokenInterceptor"></beans:bean>
   	</interceptor>
   </interceptors>
 
-  <context:component-scan base-package="lx.edu.myabweb" />
+  <context:component-scan base-package="lx.project.calander" />
   <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 </beans:beans>
