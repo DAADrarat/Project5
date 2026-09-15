@@ -10,11 +10,11 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import lx.project.calander.interceptor.LoginInterceptor;
+import lx.project.calendar.interceptor.LoginInterceptor;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "lx.project.calander" }) // 패키지 스캔 지정
+@ComponentScan(basePackages = { "lx.project.calendar" }) // 패키지 스캔 지정
 public class WebMvcConfig implements WebMvcConfigurer {
 
     @Bean
@@ -36,8 +36,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         
         registry.addInterceptor(new LoginInterceptor())
-                .addPathPatterns("/list.do")     // 기존 보호 경로
-                .addPathPatterns("/myPage.do");  // [추가] 마이페이지 접근 시 로그인 필수!
+                .addPathPatterns("/list.do");     // 기존 보호 경로
+                //.addPathPatterns("/myPage.do");  // [추가] 마이페이지 접근 시 로그인 필수!
     }
     
     //css 적용

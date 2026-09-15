@@ -24,7 +24,7 @@
                 <tr>
                     <td class="bg-light fw-bold" style="width: 30%;">이름</td>
                     <td style="width: 70%;">
-                        <input type="text" name="userName" value="${user.name}" class="form-control" required>
+                        <input type="text" name="name" value="${member.name}" class="form-control" required>
                     </td>
                 </tr>
                 
@@ -33,7 +33,7 @@
                     <td class="bg-light fw-bold">ID</td>
                     <td>
                         
-                        <input type="text" name="userId" value="${user.userId}" class="form-control" readonly>
+                        <input type="text" name="userId" value="${member.userId}" class="form-control" readonly>
                     </td>
                 </tr>
                 
@@ -41,7 +41,7 @@
                 <tr>
                     <td class="bg-light fw-bold">PW</td>
                     <td>
-                        <input type="password" name="userPw" value="${user.password}" class="form-control" required>
+                        <input type="password" name="password" value="${member.password}" class="form-control" required>
                     </td>
                 </tr>
                 
@@ -50,25 +50,22 @@
                     <td class="bg-light fw-bold">나이</td>
                     <td>
                         <!-- [수정] userAddress -> userAge name 수정 -->
-                        <input type="number" name="userAge" value="${user.userAge}" class="form-control">
+                        <input type="number" name="userAge" value="${member.userAge}" class="form-control">
                     </td>
                 </tr>
                 
-               
-                <tr>
-                    <td class="bg-light fw-bold">자격증</td>
+                 <tr>
+                    <td class="bg-light fw-bold">학력</td>
                     <td>
-                        <!-- [수정] userPhone -> certificate name 수정 -->
-                        <input type="text" name="certificate" value="${user.educationLevel}" class="form-control">
+                        <input type="text" name="educationLevel" value="${member.educationLevel}" class="form-control">
                     </td>
                 </tr>
-                
-               
+
                 <tr>
                     <td class="bg-light fw-bold">전공</td>
                     <td>
                        
-                        <input type="text" name="major" value="${user.major}" class="form-control">
+                        <input type="text" name="major" value="${member.major}" class="form-control">
                     </td>
                 </tr>
                 
@@ -78,10 +75,10 @@
                     <td class="text-start ps-3">
                         <div class="d-flex gap-4">
                             <label class="form-check-label">
-                                <input type="radio" name="empStatus" value="Y" class="form-check-input" ${user.empStatus eq 'Y' ? 'checked' : ''}> 재직
+                                <input type="radio" name="empStatus" value="Y" class="form-check-input" ${member.empStatus eq 'Y' ? 'checked' : ''}> 재직
                             </label>
                             <label class="form-check-label">
-                                <input type="radio" name="empStatus" value="N" class="form-check-input" ${user.empStatus eq 'N' || empty user.empStatus ? 'checked' : ''}> 구직
+                                <input type="radio" name="empStatus" value="N" class="form-check-input" ${member.empStatus eq 'N' || empty member.empStatus ? 'checked' : ''}> 구직
                             </label>
                         </div>
                     </td>

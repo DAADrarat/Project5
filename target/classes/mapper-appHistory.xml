@@ -13,7 +13,7 @@
 	</insert>
 
 	<!-- 내 정책 신청내역 -->
-	<select id="selectMyPolicy" parameterType="String"
+	<select id="selectMyPolicy" parameterType="int"
 		resultType="lx.project.calendar.to.PolicyAppHistoryTO">
 		SELECT h.POLICY_APP_ID, h.APP_DATE, h.APP_STATUS,
 		p.GOV_PROJECT_NAME, p.GOV_PROJECT_DATE
@@ -37,7 +37,7 @@
 		VALUES (#{jobAppId}, #{jobPostingCode}, #{memberId}, NOW(), 'Y')
 	</insert>
 	<!-- 내 채용 신청내역 -->
-	<select id="selectMyJob" parameterType="String"
+	<select id="selectMyJob" parameterType="int"
 		resultType="lx.project.calendar.to.JobAppHistoryTO">
 		SELECT h.JOB_APP_ID, h.JOB_POSTING_CODE, h.MEMBER_ID,
 		h.APP_DATE, h.APP_STATUS,
@@ -61,7 +61,7 @@
 		VALUES (#{certExamAppId}, #{memberId}, #{certCode}, #{examSession})
 	</insert>
 	<!-- 내 자격증 신청내역 -->
-	<select id="selectMyCert" parameterType="String"
+	<select id="selectMyCert" parameterType="int"
 		resultType="lx.project.calendar.to.CertExamAppHistoryTO">
 		SELECT h.CERT_EXAM_APP_ID, h.MEMBER_ID, h.CERT_CODE, h.EXAM_SESSION,
 		c.CERT_NAME, e.EXAM_DATE
@@ -76,5 +76,33 @@
 	<delete id="deleteCert" parameterType="String">
 		DELETE FROM CERT_EXAM_APP_HISTORY WHERE CERT_EXAM_APP_ID = #{certExamAppId}
 	</delete>
+	
+	<!-- 내가선택한취업스케줄 -->
+	<select id="selectMyJobSchedule" parameterType="int"
+		resultType="lx.project.calendar.to.ScheduleTO">
+		SELECT 'JOB' AS allpcj,
+		r.JOB_POSTING_CODE AS code,
+		r.JOB_POSTING_NAME AS title,
+		r.JOB_REGI_LASTDAY AS startDate,
+		r.RECRUITMENT_INFO AS info
+		FROM JOB_APP_HISTORY j
+		JOIN RECRUITMENT r ON
+		j.JOB_POSTING_CODE = r.JOB_POSTING_CODE
+		WHERE j.MEMBER_ID = #{memberId}
+	</select>
+	<!-- 내가선택한 자격증스케줄 -->
+	<select id="selectMyCertList" parameterType="int"
+		resultType="lx.project.calendar.to.CertHistoryTO">
+		SELECT
+		c.CERT_NAME AS certName,
+		ce.EXAM_REGI_FIRSTDAY AS examStart,
+		ce.EXAM_REGI_LASTDAY AS examEnd
+		FROM CERT_EXAM_APP_HISTORY h
+		JOIN CERT_EXAM ce ON h.CERT_CODE = ce.CERT_CODE AND h.EXAM_SESSION =
+		ce.EXAM_SESSION
+		JOIN CERT c ON h.CERT_CODE = c.CERT_CODE
+		WHERE h.MEMBER_ID = #{memberId}
+	</select>
+	
 
 </mapper>

@@ -8,6 +8,6 @@ public interface MemberService {
 	
 	public MemberTO selectOne(int memberId);
 	
-	public MemberTO updateMember(int memberId);
+	public MemberTO updateMember(MemberTO member);
 	
 }

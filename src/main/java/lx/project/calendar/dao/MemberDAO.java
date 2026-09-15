@@ -33,8 +33,8 @@ public class MemberDAO {
 	}
 	
 	//회원정보 수정
-	public int updateMember(int memberId) {
-		int result = session.update("update", memberId);
+	public int updateMember(MemberTO member) {
+		int result = session.update("update", member);
 		return result;
 	}
 

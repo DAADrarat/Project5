@@ -35,10 +35,10 @@
   </insert>
   
   <!-- 회원정보 수정 -->
-  <update id="update" parameterType="int">
+  <update id="update" parameterType="lx.project.calendar.to.MemberTO">
   	UPDATE MEMBER
-  	SET USER_ID=#{userId}, PASSWORD=#{password}, NAME=#{name}, EMAIL=#{email}, USER_AGE=#{userAge},
-           EDUCATION_LEVEL=#{educationLevel}, MAJOR=#{major}, EMP_STATUS=#{empStatus}
+  	SET USER_ID = #{userId}, PASSWORD = #{password}, NAME = #{name}, USER_AGE = #{userAge},
+  		EDUCATION_LEVEL = #{educationLevel}, MAJOR = #{major}, EMP_STATUS = #{empStatus}
 	WHERE MEMBER_ID = #{memberId}
   </update>
 
