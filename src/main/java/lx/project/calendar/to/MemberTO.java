@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 
 public class MemberTO {
 
-	private String memberId; // MEMBER_ID
+	private int memberId; // MEMBER_ID
 	private String userId;  // USER_ID
 	private String password; // PASSWORD
 	private String email;  // EMAIL
@@ -24,7 +24,7 @@ public class MemberTO {
 	
 }
 
-//MEMBER_ID VARCHAR(200) NOT NULL,
+//MEMBER_ID int auto_increment NOT NULL,
 //USER_ID VARCHAR(50),
 //PASSWORD VARCHAR(50),
 //EMAIL VARCHAR(100),

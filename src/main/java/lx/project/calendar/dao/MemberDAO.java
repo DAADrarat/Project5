@@ -1,4 +1,4 @@
-package lx.project.calander.dao;
+package lx.project.calendar.dao;
 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,7 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import lx.project.calander.controller.MainController;
+import lx.project.calendar.controller.MainController;
 import lx.project.calendar.to.MemberTO;
 
 
@@ -20,6 +20,7 @@ public class MemberDAO {
 	@Autowired
 	SqlSession session;
 	
+	//로그인여부 확인
 	public MemberTO loginCheck(String userId, String password) {
 		MemberTO member = new MemberTO();
 		member.setUserId(userId);
@@ -27,7 +28,16 @@ public class MemberDAO {
 		return session.selectOne("login", member);
 	}
 	
+	public MemberTO selectOne(int memberId) {
+		return session.selectOne("selectOne", memberId);
+	}
 	
+	//회원정보 수정
+	public int updateMember(int memberId) {
+		int result = session.update("update", memberId);
+		return result;
+	}
+
 	
 	
 }

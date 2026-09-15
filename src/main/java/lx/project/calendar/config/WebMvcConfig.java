@@ -1,4 +1,4 @@
-package lx.project.calander.config;
+package lx.project.calendar.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

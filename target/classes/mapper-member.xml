@@ -14,12 +14,12 @@
   </select>
 
   <!-- 회원정보 조회 -->
-  <select id="selectOne" parameterType="String" resultType="lx.project.calendar.to.MemberTO">
+  <select id="selectOne" parameterType="int" resultType="lx.project.calendar.to.MemberTO">
     SELECT * FROM MEMBER WHERE MEMBER_ID = #{memberId}
   </select>
 
   <!-- 보유 자격증 -->
-  <select id="selectPossessedCert" parameterType="String"
+  <select id="selectPossessedCert" parameterType="int"
           resultType="lx.project.calendar.to.PossessedCertTO">
     SELECT HISTORY_NO, POSSESSED_CERT_NAME, MEMBER_ID
       FROM POSSESSED_CERT
@@ -33,5 +33,13 @@
     VALUES (#{memberId}, #{userId}, #{password}, #{email}, #{userAge},
             #{name}, #{educationLevel}, #{major}, #{empStatus})
   </insert>
+  
+  <!-- 회원정보 수정 -->
+  <update id="update" parameterType="int">
+  	UPDATE MEMBER
+  	SET USER_ID=#{userId}, PASSWORD=#{password}, NAME=#{name}, EMAIL=#{email}, USER_AGE=#{userAge},
+           EDUCATION_LEVEL=#{educationLevel}, MAJOR=#{major}, EMP_STATUS=#{empStatus}
+	WHERE MEMBER_ID = #{memberId}
+  </update>
 
 </mapper>

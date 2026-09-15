@@ -13,7 +13,7 @@
     <jsp:include page="/WEB-INF/views/header.jsp" />
 
     <div class="container flex-grow-1 my-5">
-        <form action="${pageContext.request.contextPath}/editAction.do" method="post">
+        <form action="${pageContext.request.contextPath}/edit.do" method="post">
             <table class="table table-bordered text-center align-middle w-100 mx-auto mt-4" style="max-width: 600px;">
                 
                 <tr>

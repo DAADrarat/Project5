@@ -104,8 +104,11 @@
                 displayEventTime: false, 
 
                 events: [
-
-                ]
+                    <c:forEach var="e" items="${events}" varStatus="st">
+                    { title: '${e.title}', start: '${e.startDate}' }
+                    <c:if test="${!st.last}">,</c:if>
+                	</c:forEach>
+            	]
             });
 
             calendar.render();
