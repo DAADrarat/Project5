@@ -16,7 +16,7 @@ public class PolicyAppHistoryTO {
 
 	private String policyAppId;
 	private String govProjectCode;
-	private String memberId;
+	private int memberId;
 	private LocalDate appDate;
 	private String appStatus;
 	private String govProjectName; // 조인용
