@@ -36,6 +36,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         
         registry.addInterceptor(new LoginInterceptor())
+<<<<<<< HEAD
                 .addPathPatterns("/list.do");     // 기존 보호 경로
                 //.addPathPatterns("/myPage.do");  // [추가] 마이페이지 접근 시 로그인 필수!
     }
@@ -46,5 +47,17 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 registry.addResourceHandler("/resources/**")
                 .addResourceLocations("/resources/");
     
+=======
+                .addPathPatterns("/list.do")     // 기존 보호 경로
+                .addPathPatterns("/myPage.do");  // [추가] 마이페이지 접근 시 로그인 필수!
+
+           }
+    
+    // css적용하는거
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+                registry.addResourceHandler("/resources/**")
+                .addResourceLocations("/resources/");
+>>>>>>> branch 'main' of https://github.com/DAADrarat/Project5.git
     }
 }

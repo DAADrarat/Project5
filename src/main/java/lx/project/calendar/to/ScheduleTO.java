@@ -17,5 +17,9 @@ import lombok.NoArgsConstructor;
 	    private String code;
 	    private String title;
 	    private LocalDate startDate;
+<<<<<<< HEAD
+=======
+	    private LocalDate endDate;
+>>>>>>> branch 'main' of https://github.com/DAADrarat/Project5.git
 	    private String info;
 }

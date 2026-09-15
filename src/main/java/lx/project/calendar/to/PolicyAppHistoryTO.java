@@ -16,7 +16,11 @@ public class PolicyAppHistoryTO {
 
 	private String policyAppId;
 	private String govProjectCode;
+<<<<<<< HEAD
 	private String memberId;
+=======
+	private int memberId;
+>>>>>>> branch 'main' of https://github.com/DAADrarat/Project5.git
 	private LocalDate appDate;
 	private String appStatus;
 	private String govProjectName; // 조인용

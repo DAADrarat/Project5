@@ -14,7 +14,11 @@ import lombok.NoArgsConstructor;
 
 public class CertExamTO {
 	private String examSession;
+<<<<<<< HEAD
 	private LocalDate examDate;
+=======
+	private LocalDate examRegiFirstday;
+>>>>>>> branch 'main' of https://github.com/DAADrarat/Project5.git
 	// private String examLocation; 자격증시험 시험장소 삭제
 	private String certCode;
 	private String certName; // 추가

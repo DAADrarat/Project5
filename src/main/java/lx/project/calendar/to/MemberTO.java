@@ -24,7 +24,11 @@ public class MemberTO {
 	
 }
 
+<<<<<<< HEAD
 //MEMBER_ID int auto_increment NOT NULL,
+=======
+//MEMBER_ID int auto_increment not null,
+>>>>>>> branch 'main' of https://github.com/DAADrarat/Project5.git
 //USER_ID VARCHAR(50),
 //PASSWORD VARCHAR(50),
 //EMAIL VARCHAR(100),

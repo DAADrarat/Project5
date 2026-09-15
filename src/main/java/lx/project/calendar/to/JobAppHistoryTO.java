@@ -16,7 +16,11 @@ public class JobAppHistoryTO {
 	
 	private String jobAppId;
 	private String jobPostingCode;
+<<<<<<< HEAD
 	private String memberId;
+=======
+	private int memberId;
+>>>>>>> branch 'main' of https://github.com/DAADrarat/Project5.git
 	private LocalDate appDate;
 	private String appStatus;
 	

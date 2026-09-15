@@ -1,5 +1,6 @@
 package lx.project.calendar.to;
 
+<<<<<<< HEAD
 import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
@@ -15,6 +16,21 @@ import lombok.NoArgsConstructor;
 public class CertExamAppHistoryTO {
 	private String certExamAppId;
 	private String memberId;
+=======
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data 
+@Builder
+@NoArgsConstructor  
+@AllArgsConstructor
+
+public class CertExamAppHistoryTO {
+	private String certExamAppId;
+	private int memberId;
+>>>>>>> branch 'main' of https://github.com/DAADrarat/Project5.git
 	private String certCode;
 	private String examSession;
 	

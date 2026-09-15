@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+<<<<<<< HEAD
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +15,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @MapperScan(basePackages = "lx.project.calander")
+=======
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+>>>>>>> branch 'main' of https://github.com/DAADrarat/Project5.git
 public class SpringConfig {
 // DB,데이터 계층을 담은자바 코드
 	
